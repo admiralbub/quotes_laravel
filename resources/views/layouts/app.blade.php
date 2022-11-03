@@ -27,7 +27,7 @@
             		</li>
        			 @endif
     		@else
-        		<li class="nav-item " ><a href="#" class="nav-link">{{ Auth::user()->name }}</a> </li>
+        		<li class="nav-item " ><a href="{{ route('managequote.home') }}" class="nav-link">Manage quote</a> </li>
        			<li class="nav-item">
            			<a  class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();"> Logout</a>  
         		</li>

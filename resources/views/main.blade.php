@@ -3,7 +3,7 @@
 	View all questes
 @endsection
 @section('content')
-<h1 style="padding-top: 10px;">View all questes</h1>
+<h4 style="padding-top: 10px;">View all questes</h4>
 <hr>
 
 @endsection

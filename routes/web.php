@@ -17,4 +17,14 @@ Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
 
 Auth::routes();
 
+Route::prefix('managequote')->name('managequote.')->middleware('auth')->group(function() {
+    Route::get('/', [App\Http\Controllers\QuoteController::class, 'index'])->name('home');
+  
+
+    //Route::get('/managequote/{id}', [App\Http\Controllers\Admin\ArticleController::class, 'show']); //Вывести страницу для редактирование записи
+ 
+
+});
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
