@@ -8,7 +8,12 @@ class QuoteController extends Controller
 {
     public function index()
     {
-    	$quote_one = Quotes::query();
-    	return view("managequote.home",["quote_one"=>$quote_one]);
+    	$quote_one = Quotes::query()->get();
+    	return view("managequote.home",["quotes_one"=>$quote_one]);
+    }
+
+    public function show($id) {
+    	$quote_one = Quotes::query()->where("id",$id)->first();
+    	return view("managequote.edit_quote",["quotes_one"=>$quote_one]);
     }
 }

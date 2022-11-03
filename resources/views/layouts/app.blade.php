@@ -49,4 +49,6 @@
 	</div>
 </body>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('/js/my.js') }}"></script>
 </html>

@@ -1,15 +1,15 @@
 
 
 $(document).ready(function(){
-	$('#add_article').on('click',function(){
-		var title = $('#title').val();
-		var content = $('#content').val();
+	$('#add_quote').on('click',function(){
+		var quote = $('#quote').val();
+		
 
 		var csrf = $('#csrf-token').val();
 		$.ajax({
-			url: '/api/addpost',
+			url: '/api/addquote',
 			 type: "POST",
-			data: {title:title,content:content},
+			data: {quotes:quote},
 			headers: {
         		'X-CSRF-TOKEN': csrf
     		},
@@ -28,15 +28,15 @@ $(document).ready(function(){
 
 	});
 
-	$('#edit_article').on('click',function(){
-		var title = $('#title').val();
-		var content = $('#content').val();
-		var id_article = $('#id_article').val();
+	$('#edit_quote').on('click',function(){
+	
+		var quotes = $('#quotes').val();
+		var id_quote = $('#id_quote').val();
 		var csrf = $('#csrf-token').val();
 		$.ajax({
-			url: '/api/editpost/'+id_article,
-			 type: "POST",
-			data: {title:title,content:content,id_article:id_article},
+			url: '/api/edit/'+id_quote,
+			type: "POST",
+			data: {quotes:quotes,id:id_quote},
 			headers: {
         		'X-CSRF-TOKEN': csrf
     		},
@@ -54,7 +54,7 @@ $(document).ready(function(){
 		});
 
 	});
-	$('#delete_article').on('click',function(){
+	/*$('#delete_article').on('click',function(){
 		location.href=location.href;
 	});
 	$(".delbutton").click(function() {
@@ -71,8 +71,8 @@ $(document).ready(function(){
          	});
        	}
         return false;
-     });
+     });*/
     
-})
+});
 
 
